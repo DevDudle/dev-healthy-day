@@ -121,6 +121,9 @@ MonoBehaviour:
   interactPanel: {fileID: 0}
   actionText: {fileID: 0}
   title: {fileID: 0}
-  text: 
-  titleText: 
+  text: "\u0412\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u043F\u043E\u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F
+    \u0441 \u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0433\u0430\u043D\u0442\u0435\u043B\u0435\u0439?"
+  titleText: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0433\u0430\u043D\u0442\u0435\u043B\u044F"
   actionPanel: {fileID: 0}
+  gymMechanic: {fileID: 0}
+  fatiguePercentage: 3

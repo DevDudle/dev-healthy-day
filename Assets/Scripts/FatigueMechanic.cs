@@ -11,26 +11,9 @@ public class FatigueMechanic : MonoBehaviour
     private int fatigue;
 
     void Start() {
-        Debug.Log("FStart0");
         fatigue = PlayerPrefs.GetInt("Fatigue", 0);
         
         fatigueLabel.text = $"Утомление: {fatigue}%";
-        StartCoroutine("Handle");
-    }
-
-    IEnumerator Handle() {
-        while (true) {
-            if (!pause.GetPaused() && SceneManager.GetActiveScene().buildIndex == 3) {
-                yield return new WaitForSeconds(2);
-                
-                fatigue++;
-                PlayerPrefs.SetInt("Fatigue", fatigue);
-                
-                fatigueLabel.text = $"Утомление: {fatigue}%";
-            } else if (!pause.GetPaused()) {
-                yield return new WaitForSeconds(0.01f);
-            }
-        }
     }
 
     public int getFatigue() {
@@ -39,6 +22,10 @@ public class FatigueMechanic : MonoBehaviour
 
     public void setFatigue(int newFatigue) {
         fatigue = newFatigue;
+        if (fatigue > 100) fatigue = 100;
+
         PlayerPrefs.SetInt("Fatigue", fatigue);
+
+        fatigueLabel.text = $"Утомление: {fatigue}%";
     }
 }

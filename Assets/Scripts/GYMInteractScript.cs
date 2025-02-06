@@ -11,6 +11,8 @@ public class GYMInteractScript : MonoBehaviour, IPointerEnterHandler, IPointerEx
     [SerializeField] private string text;
     [SerializeField] private string titleText;
     [SerializeField] private GameObject actionPanel;
+    [SerializeField] private int fatiguePercentage;
+    [SerializeField] private GYMMechanic gymMechanic;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -27,5 +29,7 @@ public class GYMInteractScript : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         title.text = titleText;
         actionPanel.SetActive(true);
+
+        PlayerPrefs.SetInt("FatiguePercentage", fatiguePercentage);
     }
 }

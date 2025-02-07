@@ -8,7 +8,10 @@ public class Economy : MonoBehaviour
 
     void Start() {
         balance = PlayerPrefs.GetInt("Balance", 1000);
-        balanceLabel.text = $"Баланс: {balance} рублей";
+    }
+
+    void Update() {
+        balanceLabel.text = $"Баланс: {balance}руб.";
     }
 
     public int getBalance() {
@@ -17,6 +20,6 @@ public class Economy : MonoBehaviour
 
     public void setBalance(int newBalance) {
         balance = newBalance;
-        balanceLabel.text = $"Баланс: {balance} рублей";
+        PlayerPrefs.SetInt("Balance", balance);
     }
 }

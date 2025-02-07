@@ -13,7 +13,20 @@ public class HealthMechanic : MonoBehaviour
     void Start() {
         health = PlayerPrefs.GetInt("Health", 100);
         StartCoroutine("Handle");
-                
+    }
+
+    void Update() {
+        if (health > 100) {
+            health = 100;
+            PlayerPrefs.SetInt("Health", 100);
+        }
+
+        if (health < 0) {
+            health = 0;
+            PlayerPrefs.SetInt("Health", 0);
+            PlayerPrefs.SetInt("GameOver", 1);
+        }
+
         healthLabel.text = $"Здоровье: {health}%";
     }
 
@@ -21,8 +34,6 @@ public class HealthMechanic : MonoBehaviour
         while (true) {            
             if (hungryMechanic.GetHungry() <= 0) {
                 health--;
-                healthLabel.text = $"Здоровье: {health}%";
-                
                 yield return new WaitForSeconds(1f);
             }
             
@@ -32,18 +43,23 @@ public class HealthMechanic : MonoBehaviour
                 if (health <= 0) {
                     PlayerPrefs.SetInt("GameOver", 1);
                 }
-             
-                healthLabel.text = $"Здоровье: {health}%";
 
                 fatigueMechanic.setFatigue(100);
                 yield return new WaitForSeconds(0.5f);
             } else {
                 yield return new WaitForSeconds(2f);
             }
+            
+            PlayerPrefs.SetInt("Health", health);
         }
     }
 
     public int getHealth() {
         return health;
+    }
+
+    public void setHealth(int newHealth) {
+        health = newHealth;
+        PlayerPrefs.SetInt("Health", health);
     }
 }

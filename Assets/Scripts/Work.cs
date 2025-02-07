@@ -8,9 +8,11 @@ public class Work : MonoBehaviour
     [SerializeField] private Economy economy;
 
     public void getSalary() {
-        economy.setBalance(economy.getBalance() + Random.Range(50, 200));
-        timeScript.addTime(3 * 60);
-        fineMechanic.setFine((int)fineMechanic.GetFine() - Random.Range(1, (int)(fineMechanic.GetFine() / 4)));
-        hungryMechanic.setHungry((int)hungryMechanic.GetHungry() - Random.Range(1, (int)(hungryMechanic.GetHungry() / 4)));
+        if (PlayerPrefs.GetInt("Hour") >= 8 && PlayerPrefs.GetInt("Hour") <= 17) {
+            economy.setBalance(economy.getBalance() + Random.Range(50, 200));
+            timeScript.addTime((int)(1.5 * 60));
+            fineMechanic.setFine((int)fineMechanic.GetFine() - Random.Range(1, (int)(fineMechanic.GetFine() / 4)));
+            hungryMechanic.setHungry((int)hungryMechanic.GetHungry() - Random.Range(1, (int)(hungryMechanic.GetHungry() / 4)));
+        }
     }
 }

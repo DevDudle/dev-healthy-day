@@ -19,6 +19,19 @@ public class FineMechanic : MonoBehaviour
         sceneNumber = SceneManager.GetActiveScene().buildIndex;
         
         StartCoroutine("Handle");
+    }
+
+    void Update() {
+        if (finePercentage > 100) {
+            finePercentage = 100;
+            PlayerPrefs.SetInt("FinePercentage", 100);
+        }
+
+        if (finePercentage < 0) {
+            finePercentage = 0;
+            PlayerPrefs.SetInt("FinePercentage", 0);
+        }
+
         text.text = $"Счастье: {finePercentage}%";
     }
 

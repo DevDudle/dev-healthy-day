@@ -17,6 +17,9 @@ public class TimeScript : MonoBehaviour
         day = PlayerPrefs.GetInt("Day", 1);
     
         StartCoroutine("Increment");                
+    }
+
+    void Update() {
         text.text = $"День {day}. {hour.ToString("00")}:{minute.ToString("00")}";
     }
 
@@ -41,7 +44,6 @@ public class TimeScript : MonoBehaviour
 
                 PlayerPrefs.SetInt("Hour", hour);
                 PlayerPrefs.SetInt("Minute", minute);
-                text.text = $"День {day}. {hour.ToString("00")}:{minute.ToString("00")}";
             }
         }
     }
@@ -60,8 +62,6 @@ public class TimeScript : MonoBehaviour
             PlayerPrefs.SetInt("Hour", hour);
             PlayerPrefs.SetInt("Minute", minute);
             PlayerPrefs.SetInt("Day", day);
-        }
-        
-        text.text = $"День {day}. {hour.ToString("00")}:{minute.ToString("00")}";
+        }    
     }
 }

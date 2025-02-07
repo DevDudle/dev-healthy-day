@@ -31,6 +31,9 @@ public class GameOverHandler : MonoBehaviour
             PlayerPrefs.SetInt("HungryPercentage", 100);
             PlayerPrefs.SetInt("Health", 100);
             PlayerPrefs.SetInt("Fatigue", 0);
+            PlayerPrefs.SetInt("Day", 1);
+            PlayerPrefs.SetInt("Hour", 12);
+            PlayerPrefs.SetInt("Minute", 0);
             PlayerPrefs.SetInt("GameOver", 0);
 
             Change();

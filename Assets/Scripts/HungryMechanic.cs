@@ -12,8 +12,20 @@ public class HungryMechanic : MonoBehaviour
     {
         hungryPercentage = PlayerPrefs.GetInt("HungryPercentage", 100);
         StartCoroutine("Handle");
+    }
 
-        text.text = $"Голод: {hungryPercentage}%";
+    void Update() {
+        if (hungryPercentage > 100) {
+            hungryPercentage = 100;
+            PlayerPrefs.SetInt("HungryPercentage", 100);
+        }
+
+        if (hungryPercentage < 0) {
+            hungryPercentage = 0;
+            PlayerPrefs.SetInt("HungryPercentage", 0);
+        }
+
+        text.text = $"Сытость: {hungryPercentage}%";
     }
 
     IEnumerator Handle() {
@@ -31,7 +43,6 @@ public class HungryMechanic : MonoBehaviour
                 }
 
                 PlayerPrefs.SetInt("HungryPercentage", hungryPercentage);
-                text.text = $"Голод: {hungryPercentage}%";
             }
         }
     }
@@ -42,14 +53,11 @@ public class HungryMechanic : MonoBehaviour
 
     public void setHungry(int newHungry) {
         hungryPercentage = newHungry;
-
         PlayerPrefs.SetInt("HungryPercentage", newHungry);
-        text.text = $"Голод: {hungryPercentage}%";
     }
 
     public void Reset() {
         hungryPercentage = 100;
         PlayerPrefs.SetInt("HungryPercentage", 100);
-        text.text = $"Голод: {hungryPercentage}%";
     }
 }

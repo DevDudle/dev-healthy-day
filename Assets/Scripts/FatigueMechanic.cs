@@ -12,7 +12,19 @@ public class FatigueMechanic : MonoBehaviour
 
     void Start() {
         fatigue = PlayerPrefs.GetInt("Fatigue", 0);
-        
+    }
+
+    void Update() {
+        if (fatigue > 100) {
+            fatigue = 100;
+            PlayerPrefs.SetInt("Fatigue", 100);
+        }
+
+        if (fatigue < 0) {
+            fatigue = 0;
+            PlayerPrefs.SetInt("Fatigue", 0);
+        }
+
         fatigueLabel.text = $"Утомление: {fatigue}%";
     }
 
@@ -22,10 +34,6 @@ public class FatigueMechanic : MonoBehaviour
 
     public void setFatigue(int newFatigue) {
         fatigue = newFatigue;
-        if (fatigue > 100) fatigue = 100;
-
         PlayerPrefs.SetInt("Fatigue", fatigue);
-
-        fatigueLabel.text = $"Утомление: {fatigue}%";
     }
 }

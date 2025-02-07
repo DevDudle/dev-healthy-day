@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -63,5 +64,9 @@ public class TimeScript : MonoBehaviour
             PlayerPrefs.SetInt("Minute", minute);
             PlayerPrefs.SetInt("Day", day);
         }    
+    }
+
+    public Vector3 getTime() {
+        return new Vector3(day, hour, minute);
     }
 }

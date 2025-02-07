@@ -1,10 +1,12 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HungryMechanic : MonoBehaviour
 {
     private int hungryPercentage;
+    [SerializeField] private FineMechanic fineMechanic;
     [SerializeField] private TextMeshProUGUI text; 
     [SerializeField] private Pause pause;
 
@@ -37,7 +39,7 @@ public class HungryMechanic : MonoBehaviour
             if (!pause.GetPaused()) {
                 yield return new WaitForSeconds(30);
 
-                hungryPercentage--;
+                hungryPercentage -= (100 - fineMechanic.GetFine() <= 40 && 100 - fineMechanic.GetFine() > 0 ? 3 : 1);
                 if (hungryPercentage <= 0) {
                     hungryPercentage = 0;
                 }

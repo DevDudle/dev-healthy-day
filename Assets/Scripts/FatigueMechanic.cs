@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FatigueMechanic : MonoBehaviour
 {
@@ -26,6 +25,17 @@ public class FatigueMechanic : MonoBehaviour
         }
 
         fatigueLabel.text = $"Утомление: {fatigue}%";
+    }
+
+    IEnumerator Handle() {
+        while (true) {
+            if (!pause.GetPaused()) {
+                yield return new WaitForSeconds(120);
+
+                fatigue++;
+                PlayerPrefs.SetInt("Fatigue", fatigue);
+            }
+        }
     }
 
     public int getFatigue() {

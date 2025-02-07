@@ -8,12 +8,12 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI Text;
 
-    public void Change() {
-        StartCoroutine("Handle");
+    public void Change(bool GameOver) {
+        StartCoroutine("Handle", GameOver);
     }
 
-    IEnumerator Handle() {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.sceneCountInBuildSettings - 1);
+    IEnumerator Handle(bool GameOver) {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(GameOver ? SceneManager.sceneCountInBuildSettings - 2 : SceneManager.sceneCountInBuildSettings - 1);
         
         float progress;
         while (!operation.isDone) {
@@ -26,7 +26,7 @@ public class GameOverHandler : MonoBehaviour
 
     void Update()
     {
-        if (PlayerPrefs.GetInt("GameOver") == 1) {
+        if (PlayerPrefs.GetInt("GameOver", 0) == 1 || PlayerPrefs.GetInt("Day", 0) == 8) {
             PlayerPrefs.SetInt("FinePercentage", 100);
             PlayerPrefs.SetInt("HungryPercentage", 100);
             PlayerPrefs.SetInt("Health", 100);
@@ -36,7 +36,7 @@ public class GameOverHandler : MonoBehaviour
             PlayerPrefs.SetInt("Minute", 0);
             PlayerPrefs.SetInt("GameOver", 0);
 
-            Change();
+            Change(PlayerPrefs.GetInt("GameOver", 0) == 1 ? true : false);
         }
     }
 }

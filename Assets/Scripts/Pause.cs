@@ -6,8 +6,13 @@ public class Pause : MonoBehaviour
 
     [SerializeField] private GameObject pauseObject;
 
+    void Start() {
+        UnPause();
+    }
+
     void Update() {
-        if (Input.GetKeyUp(KeyCode.Escape)) {
+        if (Input.GetKeyUp(KeyCode.Escape) || PlayerPrefs.GetInt("UnPause", 0) == 1) {
+            PlayerPrefs.SetInt("UnPause", 0);
             Handle();
         }
     }
@@ -26,5 +31,9 @@ public class Pause : MonoBehaviour
 
     public bool GetPaused() {
         return isPaused;
+    }
+
+    public void UnPause() {
+        Time.timeScale = 1;
     }
 }

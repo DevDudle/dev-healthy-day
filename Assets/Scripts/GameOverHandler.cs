@@ -27,6 +27,7 @@ public class GameOverHandler : MonoBehaviour
     void Update()
     {
         if (PlayerPrefs.GetInt("GameOver", 0) == 1 || PlayerPrefs.GetInt("Day", 0) == 8) {
+            PlayerPrefs.SetInt("Balance", 1000);
             PlayerPrefs.SetInt("FinePercentage", 100);
             PlayerPrefs.SetInt("HungryPercentage", 100);
             PlayerPrefs.SetInt("Health", 100);

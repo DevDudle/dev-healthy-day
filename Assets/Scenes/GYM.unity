@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1934a81ca158a3846a7051660d1a7ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseObject: {fileID: 0}
+  pauseObject: {fileID: 594202740}
 --- !u!1 &186190997
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,8 +695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00c8cbff5d4d2e48a5ea43f21b4436a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  Text: {fileID: 0}
+  panel: {fileID: 1030154267}
+  Text: {fileID: 704465152}
   sceneNumber: 0
 --- !u!114 &237113086
 MonoBehaviour:
@@ -2291,7 +2291,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 594202740}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: set_isStatic
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2301,7 +2301,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 155364169}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: UnPause
         m_Mode: 1

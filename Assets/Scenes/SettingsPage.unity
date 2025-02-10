@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f82350f0f0e036479d50b7212165199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
   mixer: {fileID: 24100000, guid: 123e51c00d059254d8efca3a9482697c, type: 2}
   slider: {fileID: 442398193}
   text: {fileID: 839375766}

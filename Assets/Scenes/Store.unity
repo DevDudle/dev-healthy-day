@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 300039228}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999285
   m_NumberOfSteps: 11
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3156,7 +3156,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 963194227}
   m_PlaneDistance: 1
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -4357,6 +4357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f82350f0f0e036479d50b7212165199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 950668742}
   mixer: {fileID: 24100000, guid: 123e51c00d059254d8efca3a9482697c, type: 2}
   slider: {fileID: 0}
   text: {fileID: 0}
@@ -6389,8 +6390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00c8cbff5d4d2e48a5ea43f21b4436a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  Text: {fileID: 0}
+  panel: {fileID: 1250635640}
+  Text: {fileID: 860323593}
   sceneNumber: 0
 --- !u!114 &1514460280
 MonoBehaviour:
@@ -6643,7 +6644,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1532722375}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: set_isStatic
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6653,7 +6654,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 950668742}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: UnPause
         m_Mode: 1
@@ -8865,7 +8866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000881575}
+  m_AnchoredPosition: {x: 0, y: 0.000048841877}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1855258631
@@ -9210,7 +9211,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -800, y: 500}
+  m_SizeDelta: {x: -800, y: 565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908799335
 MonoBehaviour:

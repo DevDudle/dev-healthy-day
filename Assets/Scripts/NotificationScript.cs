@@ -1,14 +1,13 @@
 using System.Collections;
 using TMPro;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class NotificationScript : MonoBehaviour
 {
-    [SerializeField] private string title;
-    [SerializeField] private string message;
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private Transform parent;
+    [SerializeField] public string title;
+    [SerializeField] public string message;
+    [SerializeField] public GameObject prefab;
+    [SerializeField] public Transform parent;
 
     private GameObject notification;
 
@@ -36,6 +35,14 @@ public class NotificationScript : MonoBehaviour
 
     IEnumerator DeleteNotification() {
         yield return new WaitForSeconds(3.5f);
-        Destroy(notification);
+        
+        if (parent.childCount > 1) {
+            for (int i = parent.childCount - 1; i >= 0; i--) {
+                Destroy(parent.GetChild(i).gameObject);
+                yield return new WaitForSeconds(3.5f);
+            }
+        } else {
+            Destroy(notification);
+        }
     }
 }

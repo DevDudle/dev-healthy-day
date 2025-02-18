@@ -939,9 +939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00c8cbff5d4d2e48a5ea43f21b4436a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1249219084}
+  panel: {fileID: 1250635640}
   Text: {fileID: 860323593}
-  sceneNumber: 2
+  sceneNumber: 1
 --- !u!114 &218711318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 300039228}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999285
+  m_Size: 0.9983068
   m_NumberOfSteps: 11
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5117,7 +5117,7 @@ MonoBehaviour:
   description: {fileID: 85540679}
   objname: "\u0425\u043E\u0442-\u0434\u043E\u0433"
   cost: 100
-  health: -1
+  health: -3
   hungry: 10
 --- !u!114 &1086124118
 MonoBehaviour:
@@ -5548,7 +5548,7 @@ MonoBehaviour:
   description: {fileID: 85540679}
   objname: "\u0421\u0430\u043B\u0430\u0442"
   cost: 200
-  health: 1
+  health: 2
   hungry: 10
 --- !u!114 &1223924152
 MonoBehaviour:
@@ -5659,8 +5659,8 @@ RectTransform:
   m_GameObject: {fileID: 1249219084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 488392917}
   - {fileID: 860323592}
@@ -5737,7 +5737,7 @@ RectTransform:
   m_GameObject: {fileID: 1250635640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1249219085}
@@ -6981,7 +6981,7 @@ MonoBehaviour:
   description: {fileID: 85540679}
   objname: "\u0427\u0438\u043F\u0441\u044B"
   cost: 120
-  health: -2
+  health: -5
   hungry: 7
 --- !u!114 &1553035824
 MonoBehaviour:
@@ -7791,7 +7791,7 @@ MonoBehaviour:
   description: {fileID: 85540679}
   objname: "\u0411\u0443\u0440\u0433\u0435\u0440"
   cost: 125
-  health: -3
+  health: -10
   hungry: 15
 --- !u!1 &1660639025
 GameObject:
@@ -8866,7 +8866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000048841877}
+  m_AnchoredPosition: {x: 0, y: 0.00006242751}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1855258631
@@ -9533,6 +9533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1249219084}
   Text: {fileID: 860323593}
+  healthMechanic: {fileID: 285446252}
 --- !u!1 &1960235805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,7 +9662,7 @@ MonoBehaviour:
   description: {fileID: 85540679}
   objname: "\u042F\u0431\u043B\u043E\u043A\u043E"
   cost: 15
-  health: 1
+  health: 2
   hungry: 3
 --- !u!114 &2053333483
 MonoBehaviour:

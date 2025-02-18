@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,7 +10,7 @@ public class LaptopInteractScript : MonoBehaviour, IPointerEnterHandler, IPointe
     [SerializeField] private string text;
     [SerializeField] private string titleText;
     [SerializeField] private GameObject actionPanel;
-
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         actionText.text = text;

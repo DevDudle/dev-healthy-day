@@ -39,10 +39,6 @@ public class HealthMechanic : MonoBehaviour
             
             if (fatigueMechanic.getFatigue() > 100) {
                 health--;
-             
-                if (health <= 0) {
-                    PlayerPrefs.SetInt("GameOver", 1);
-                }
 
                 fatigueMechanic.setFatigue(100);
                 yield return new WaitForSeconds(0.5f);

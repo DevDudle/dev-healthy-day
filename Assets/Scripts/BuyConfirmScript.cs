@@ -19,6 +19,6 @@ public class BuyConfirmScript : MonoBehaviour, IPointerClickHandler
         PlayerPrefs.SetInt("CurrentHealth", health);
         PlayerPrefs.SetInt("CurrentHungry", hungry);
         
-        Debug.Log($"{PlayerPrefs.GetInt("CurrentCost")}, {PlayerPrefs.GetInt("CurrentHealth")}, {PlayerPrefs.GetInt("CurrentHungry")}");
+        //Debug.Log($"{PlayerPrefs.GetInt("CurrentCost")}, {PlayerPrefs.GetInt("CurrentHealth")}, {PlayerPrefs.GetInt("CurrentHungry")}");
     }
 }
